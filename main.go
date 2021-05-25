@@ -45,11 +45,11 @@ func main() {
 	dg.Close()
 }
 
-func ready(s *discordgo.Session, event *discordgo.Ready) {
+func ready(s *discordgo.Session, event *discordgo.Ready) { // Called when the bot is ready
 	s.UpdateGameStatus(0, "Just looking around")
 }
 
-func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
+func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) { // Called when a message is received
 
 	if m.Author.ID == s.State.User.ID {
 		return
