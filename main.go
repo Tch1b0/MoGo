@@ -15,11 +15,12 @@ import (
 )
 
 func main() {
-	token, err := ioutil.ReadFile("token.txt")
+	tokenraw, err := ioutil.ReadFile("token.txt")
 	if err != nil {
 		fmt.Println("Please create a token.txt file and store the key of your bot in there.")
 		return
 	}
+	token := strings.Replace(string(tokenraw), "\n", "", 1)
 	dg, err := discordgo.New(fmt.Sprintf("Bot %s", token))
 
 	if err != nil {
