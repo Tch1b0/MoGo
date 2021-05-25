@@ -66,7 +66,6 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) { // Called
 		for i:=0; i < len(msg); i++ {
 			
 			matched := reg.MatchString(msg[i]) 
-			fmt.Println(matched)
 			if err != nil {
 				fmt.Println(err)
 				return
@@ -102,7 +101,6 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) { // Called
 		if err != nil {
 			fmt.Println(err)
 		}
-		fmt.Printf("LINK: %s, SHORT: %s, TOKEN: %s\n", l.Link, l.Short, l.Token)
 		s.ChannelMessageSend(
 			m.ChannelID, 
 			fmt.Sprintf("Your shortcut is:%s\nThe corrosponding link is: https://ls.johannespour.de/%s", l.Short, l.Short),

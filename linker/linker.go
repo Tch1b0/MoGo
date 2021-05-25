@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 )
@@ -44,15 +43,5 @@ func (l Linker) Create() (Linker, error) {
 	l.Short = res["short"]
 	l.Token = res["token"]
 
-	// if str, ok := res["short"]; ok {
-	// 	l.Link = str
-	// } else {
-	// 	return errors.New("the linkshort server is currently experiecing some problems")
-	// }
-
-	// if str, ok := res["token"].(string); ok {
-	// 	l.Token = str
-	// }
-	fmt.Printf("LINK: %s, SHORT: %s, TOKEN: %s\n", l.Link, l.Short, l.Token)
 	return l, nil
 }
