@@ -1,9 +1,11 @@
 # MoGo
-<img src="./MoGo.jpg" alt="MoGo Logo" tile="MoGo" width="150" height="150" style="font-align: center">
+<p align="center">
+    <img src="./MoGoBig.jpg" alt="MoGo Logo" tile="MoGo" width="600" height="300" style="display: flex;justify-content: center;">
+</p>
 <br>
 MoGo is the younger brother of Mocha (another bot I made).
 <br>
-MoGo can short your links using the [LinkShort API](https://github.com/Tch1b0/LinkShort).
+MoGo can short your links using the <a href="https://github.com/Tch1b0/LinkShort">LinkShort API</a>.
 
 ## How to use
 
