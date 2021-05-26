@@ -1,6 +1,6 @@
 # MoGo
 <p align="center">
-    <img src="./MoGoBig.jpg" alt="MoGo Logo" tile="MoGo" width="600" height="300" style="display: flex;justify-content: center;">
+    <img src="./media/MoGoBig.jpg" alt="MoGo Logo" tile="MoGo" width="600" height="300" style="display: flex;justify-content: center;">
 </p>
 <br>
 
@@ -28,4 +28,4 @@ $ docker-compose up -d
 ```
 
 ## Invite MoGo
-<a href="https://discord.com/oauth2/authorize?client_id=846694178674966549&scope=bot&permissions=216128"><img src="./MoGoInvite.jpg" width="450px" height="150px"></a>
+<a href="https://discord.com/oauth2/authorize?client_id=846694178674966549&scope=bot&permissions=216128"><img src="./media/MoGoInvite.jpg" width="450px" height="150px"></a>
