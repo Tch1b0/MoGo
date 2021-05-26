@@ -1,4 +1,4 @@
-package utils
+package linker
 
 import (
 	"bytes"
@@ -12,6 +12,7 @@ type Linker struct {
 	Short string
 	Link  string
 	Token string 
+	Original bool
 }
 
 func (l Linker) Create() (Linker, error) {
@@ -42,6 +43,7 @@ func (l Linker) Create() (Linker, error) {
 
 	l.Short = res["short"]
 	l.Token = res["token"]
+	l.Original = !(len(l.Token) == 0)
 
 	return l, nil
 }
