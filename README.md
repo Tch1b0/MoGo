@@ -14,10 +14,6 @@ If a link appears that is **longer than 35 characters**, Mogo will automatically
 
 Use `$commands` in a Discord server where **MoGo** is also a member, to get a list of all commands. 
 
-## How to invite to a Server
-You can invite MoGo with clicking on this link: <br>
-<a href="https://discord.com/oauth2/authorize?client_id=846694178674966549&scope=bot&permissions=8">Invite MoGo</a>
-
 ## Host on your own
 Replace `<token>` with your bot token.
 
@@ -30,3 +26,6 @@ $ echo <token> > token.txt
 
 $ docker-compose up -d
 ```
+
+## Invite MoGo
+<a href="https://discord.com/oauth2/authorize?client_id=846694178674966549&scope=bot&permissions=8"><img src="./MoGoInvite.jpg" width="450px" height="150px"></a>
