@@ -64,13 +64,16 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) { // Called
 				s.ChannelMessageSend(m.ChannelID, "Link is missing")
 				return
 			}
-			commands.Short(s, m, c[1])
+			commands.Short(s, m, c[1], true)
 
 		case "$help":
 			commands.Help(s, m)
 
 		case "$commands":
 			commands.CommandList(s, m)
+
+		case "$about":
+			commands.About(s, m)
 
 		default:
 			utils.ScanForLinks(s, m)
