@@ -28,4 +28,4 @@ $ docker-compose up -d
 ```
 
 ## Invite MoGo
-<a href="https://discord.com/oauth2/authorize?client_id=846694178674966549&scope=bot&permissions=8"><img src="./MoGoInvite.jpg" width="450px" height="150px"></a>
+<a href="https://discord.com/oauth2/authorize?client_id=846694178674966549&scope=bot&permissions=216128"><img src="./MoGoInvite.jpg" width="450px" height="150px"></a>
