@@ -5,11 +5,11 @@ import (
 	"io/ioutil"
 	"os"
 	"os/signal"
-	"regexp"
 	"strings"
 	"syscall"
 
-	linker "github.com/Tch1b0/MoGo/linker"
+	"github.com/Tch1b0/MoGo/commands"
+	utils "github.com/Tch1b0/MoGo/utils"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -47,7 +47,7 @@ func main() {
 }
 
 func ready(s *discordgo.Session, event *discordgo.Ready) { // Called when the bot is ready
-	s.UpdateGameStatus(0, "Just looking around")
+	s.UpdateGameStatus(0, "$commands")
 }
 
 func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) { // Called when a message is received
@@ -56,55 +56,26 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) { // Called
 		return
 	}
 
-	if !strings.HasPrefix(m.Content, "$") {
-		msg := strings.Split(m.Content, " ")
-		rawreg := `^https?:\/\/(([a-z0-9]){0,}\.)?([a-z0-9]){2,63}\.[a-z]{2,}(\/[\s\S]{0,}?){0,}$` // Yes, I wrote this by myself and yes, it took me a few hours
-		reg, err := regexp.Compile(rawreg)
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		for i:=0; i < len(msg); i++ {
-			
-			matched := reg.MatchString(msg[i]) 
-			if err != nil {
-				fmt.Println(err)
+	c := strings.Split(m.Content, " ")  // Split the message so the arguments can be properly be read
+
+	switch c[0] {
+		case "$short":
+			if len(c) < 2{
+				s.ChannelMessageSend(m.ChannelID, "Link is missing")
 				return
 			}
-			if matched && len(msg[i]) > 35 {
-				l := linker.Linker{Link: msg[i]}
-				l, err = l.Create()
-				if err != nil {
-					fmt.Println(err)
-					return
-				}
-				s.ChannelMessageSend(
-					m.ChannelID, 
-					fmt.Sprintf("Shorter Link: https://ls.johannespour.de/%s", l.Short),
-				)
-			}
-		}
-		return
-	}
+			commands.Short(s, m, c[1], true)
 
-	m.Content = strings.Replace(m.Content, "$", "", 1)
+		case "$help":
+			commands.Help(s, m)
 
-	c := strings.Split(m.Content, " ")
+		case "$commands":
+			commands.CommandList(s, m)
 
-	if c[0] == "short" {
-		if len(c) < 2{
-			s.ChannelMessageSend(m.ChannelID, "Link is missing")
-			return
-		}
+		case "$about":
+			commands.About(s, m)
 
-		l := linker.Linker{Link: c[1]}
-		l, err := l.Create()
-		if err != nil {
-			fmt.Println(err)
-		}
-		s.ChannelMessageSend(
-			m.ChannelID, 
-			fmt.Sprintf("Your shortcut is:%s\nThe corrosponding link is: https://ls.johannespour.de/%s", l.Short, l.Short),
-		)
+		default:
+			utils.ScanForLinks(s, m)
 	}
 }
