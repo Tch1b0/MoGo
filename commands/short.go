@@ -16,7 +16,7 @@ func Short(s *discordgo.Session, m *discordgo.MessageCreate, link string, prompt
 	}
 
 	e := discordgo.MessageEmbed{}
-	e.Title = "Link shortend"
+	e.Title = "Link shortened"
 	e.Description = fmt.Sprintf(
 		"%s\n\n:arrow_down:\n\nhttps://ls.johannespour.de/%s",
 		l.Link,
