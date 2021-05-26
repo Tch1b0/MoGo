@@ -5,6 +5,7 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/Tch1b0/MoGo/commands"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -24,16 +25,7 @@ func ScanForLinks(s *discordgo.Session, m *discordgo.MessageCreate) {
 			return
 		}
 		if matched && len(msg[i]) > 35 {
-			l := Linker{Link: msg[i]}
-			l, err = l.Create()
-			if err != nil {
-				fmt.Println(err)
-				return
-			}
-			s.ChannelMessageSend(
-				m.ChannelID,
-				fmt.Sprintf("Shorter Link: https://ls.johannespour.de/%s", l.Short),
-			)
+			commands.Short(s, m, msg[i], false)
 		}
 	}
 }
