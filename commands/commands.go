@@ -11,7 +11,7 @@ func CommandList(s *discordgo.Session, m *discordgo.MessageCreate) {
 	e.Fields = append(
 		e.Fields,
 		&discordgo.MessageEmbedField{
-			Name: "$short",
+			Name: "$short <link>",
 			Value: "Shorten a certain link",
 		},
 		&discordgo.MessageEmbedField{
