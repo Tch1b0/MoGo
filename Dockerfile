@@ -3,6 +3,7 @@ FROM golang:latest
 WORKDIR /go/src/app
 
 COPY ./linker ./linker
+COPY ./utils ./utils
 COPY ./main.go ./main.go
 COPY ./commands ./commands
 COPY ./main.go ./main.go
