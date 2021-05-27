@@ -12,7 +12,6 @@ type Linker struct {
 	Short string
 	Link  string
 	Token string 
-	Original bool
 }
 
 func (l Linker) Create() (Linker, error) {
@@ -40,10 +39,13 @@ func (l Linker) Create() (Linker, error) {
 
 	res := make(map[string]string)
 	json.Unmarshal(body, &res)
-
+	
 	l.Short = res["short"]
 	l.Token = res["token"]
-	l.Original = !(len(l.Token) == 0)
 
 	return l, nil
+}
+
+func (l Linker) Original() (bool) {
+	return !(len(l.Token) == 0)
 }

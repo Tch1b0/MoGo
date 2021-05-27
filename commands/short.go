@@ -29,7 +29,7 @@ func Short(s *discordgo.Session, m *discordgo.MessageCreate, link string, prompt
 		&e,
 	)
 
-	if !l.Original || !prompted{
+	if !l.Original() || !prompted{
 		return
 	}
 
