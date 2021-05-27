@@ -1,7 +1,7 @@
-# MoGo
-<p align="center">
-    <img src="./media/MoGoBig.jpg" alt="MoGo Logo" tile="MoGo" width="600" height="300" style="display: flex;justify-content: center;">
-</p>
+<div align="center">
+    <img src="./media/MoGoBig.jpg" alt="MoGo Logo" tile="MoGo" width="900" height="450" style="display: flex;justify-content: center;">
+    <h1>MoGo</h1>
+</div>
 <br>
 
 ## Purpose
