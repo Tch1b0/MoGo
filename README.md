@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./media/MoGoBig.jpg" alt="MoGo Logo" tile="MoGo" width="900" height="450" style="display: flex;justify-content: center;">
+    <img src="./media/MoGoBig.jpg" alt="MoGo Logo" tile="MoGo" width="800" height="400" style="display: flex;justify-content: center;">
     <h1>MoGo</h1>
 </div>
 <br>
