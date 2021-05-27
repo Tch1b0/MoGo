@@ -36,7 +36,7 @@ func Short(s *discordgo.Session, m *discordgo.MessageCreate, link string, prompt
 	p := discordgo.MessageEmbed{}
 	p.Title = "Shortcut"
 	p.Description = fmt.Sprintf(
-		"**Short:**\nhttps://johannespour.de/%s\n\n"+
+		"**Short:**\nhttps://ls.johannespour.de/%s\n\n"+
 		"**Token:**\n%s",
 		l.Short,
 		l.Token,
